@@ -27,17 +27,17 @@ public class BookController {
         List<Book> savedBooks = service.saveBooks(books);
         return new ResponseEntity<List<Book>>(savedBooks, HttpStatus.CREATED);
     }
-    @GetMapping("/getbyid/{id}")
+    @GetMapping("/byId/{id}")
     public ResponseEntity<Book> getBookById(@PathVariable Long id){
         Book bookById = service.getBookById(id);
         return new ResponseEntity<Book>(bookById,HttpStatus.OK);
     }
-    @GetMapping("/getbyname/{name}")
+    @GetMapping("/byName/{name}")
     public ResponseEntity<Book> getBookByName(@PathVariable String name){
         Book bookByName = service.getBookByName(name);
         return new ResponseEntity<Book>(bookByName,HttpStatus.OK);
     }
-    @GetMapping("/getall")
+    @GetMapping("/")
     public ResponseEntity<List<Book>> getAllBooks(){
         List<Book> bookList = service.getAllBooks();
         return new ResponseEntity<List<Book>>(bookList,HttpStatus.OK);
